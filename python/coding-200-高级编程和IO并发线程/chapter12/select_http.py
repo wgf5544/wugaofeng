@@ -20,7 +20,11 @@ stop = False
 
 class Fetcher:
     def connected(self, key):
-        selector.unregister(key.fd) # 注销掉监控的描述符
+        selector.unregister(key.fd)  # 注销掉监控的描述符
+
+        print("=========key.fd:", key.fd)
+        print("=========self.client.fileno():", self.client.fileno())
+
         self.client.send("GET {} HTTP/1.1\r\nHost:{}\r\nConnection:close\r\n\r\n".format(self.path, self.host).encode("utf8"))
         selector.register(self.client.fileno(), EVENT_READ, self.readable)  # 注册读取监控
 
@@ -67,7 +71,7 @@ def loop():
     #1. select本身是不支持register模式
     #2. socket状态变化以后的回调是由程序员完成的
     while not stop:
-        ready = selector.select() # 在windows环境下，没有可监控的事件时（都注销了），会抛出异常，因为在widows下选择的是select；在Linux下选择的是epoll，不会异常，会一直阻塞。
+        ready = selector.select()  # 在windows环境下，没有可监控的事件时（都注销了），会抛出异常，因为在widows下选择的是select；在Linux下选择的是epoll，不会异常，会一直阻塞。
         for key, mask in ready:
             call_back = key.data
             call_back(key)
