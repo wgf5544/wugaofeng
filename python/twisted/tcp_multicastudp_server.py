@@ -1,8 +1,12 @@
 __author__ = 'wgf'
 __date__ = ' 下午6:49'
+
+import time
+
 from twisted.internet import reactor
 from twisted.internet.protocol import Protocol, Factory
 from twisted.internet.protocol import DatagramProtocol
+from twisted.internet import defer,utils
 
 '''
 #长连接数量太多，导致服务器异常，此时已经无法挽救，只能重启服务。
@@ -26,9 +30,18 @@ class TcpEchoServer(Protocol):
 
     def dataReceived(self, data): #将收到的数据返回给客户端
         print('From TCP client data:{}'.format(data))
-        self.transport.write(data)
+        reactor.callInThread(self.handle, data)
+
         #self.transport.loseConnection()
 
+    def handle(self,data):
+        print('开始操作')
+        time.sleep(5)
+        reactor.callFromThread(self.write_response, data)
+        print('结束操作')
+
+    def write_response(self, result):
+        self.transport.write("ack:".encode() + result )
 
 class MulticastPingPong(DatagramProtocol):
 
@@ -46,6 +59,8 @@ class MulticastPingPong(DatagramProtocol):
     def datagramReceived(self, datagram, address):
         print("From UDP client data:%s received from %s" % (repr(datagram), repr(address)))
         if datagram:
+
+            time.sleep(10)
             # Rather than replying to the group multicast address, we send the
             # reply directly (unicast) to the originating port:
             self.transport.write(datagram, address)
