@@ -7,7 +7,7 @@ from twisted.internet import reactor, defer
 class Getter:
     def gotResults(self, x):
         """
-        The Deferred mechanism provides a mechanism to signal error
+        The Deferred mechanism prgitovides a mechanism to signal error
         conditions.  In this case, odd numbers are bad.
 
         This function demonstrates a more complex way of starting
