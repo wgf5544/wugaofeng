@@ -117,6 +117,9 @@ print(cls.age)
 
 多线程的执行方式主要由操作系统在多个线程之间快速切换，让每个线程都短暂地交替运行，看起来像是同时执行一样。
 多核CPU真正意义上实现多线程或多进程的同时执行。
+
+计算密集型任务：多进程单线程，利用多核优势，同时避免多线程切换浪费CPU资源。
+I/O密集型任务：多线程，由于Python GIL锁限制，多线程更适合I/O密集型任务。
 """
 
 from threading import Thread
@@ -134,35 +137,137 @@ def count(n):
 def test_normal():
     count(1000000)
     count(1000000)
+    count(1000000)
 
 
 # 多线程方式
 def test_Thread():
-    t1 = Thread(target=count,args=(1000000,))
-    t2 = Thread(target=count,args=(1000000,))
+    t1 = Thread(target=count, args=(1000000,))
+    t2 = Thread(target=count, args=(1000000,))
+    t3 = Thread(target=count, args=(1000000,))
     t1.start()
     t2.start()
+    t3.start()
     t1.join()
     t2.join()
+    t3.join()
 
 
 # 多进程方式
 def test_Process():
-    t1 = Process(target=count,args=(1000000,))
-    t2 = Process(target=count,args=(1000000,))
+    t1 = Process(target=count, args=(1000000,))
+    t2 = Process(target=count, args=(1000000,))
+    t3 = Process(target=count, args=(1000000,))
     t1.start()
     t2.start()
+    t3.start()
     t1.join()
     t2.join()
+    t3.join()
+
 
 
 if __name__ == '__main__':
     # print("test_normal", timeit('test_normal()', 'from __main__ import test_normal', number=10))
     # print("test_Thread", timeit('test_Thread()', 'from __main__ import test_Thread', number=10))
-    print("test_Process", timeit('test_Process()', test_Process, number=10))
-    def argument(a=1,b=2,c=3):
+    # print("test_Process", timeit('test_Process()', 'from __main__ import test_Process', number=10))
+
+
+    def argument(a=1, b=2, c=3):
         print(a)
         print(b)
         print(c)
+
     argument(5, 6, c=7)
 
+
+
+# ===============装饰器================
+"""
+装饰器：不改变原有函数的情况下，增加额外的功能的实现。
+无参装饰器，2层嵌套函数。
+有参数装饰器，相当于3层嵌套函数，
+第一层函数参数是装饰器的参数，
+第二层参数是被装饰函数名，
+第三层参数是被装饰函数参数（没有参数，可以没有这层嵌套函数）必须嵌套返回对应函数名。
+最里层函数返回被装饰函数函数名，也就是第二层函数的参数名。
+
+被装饰函数注册装饰后（没有显式调用被装饰函数），被装饰函数不会运行，但是装饰器函数会被执行（比如web 中的路由配置）；
+如果return 的是函数调用不只是函数名，会一层层执行装饰器中函数。
+"""
+
+
+# 普通装饰器，2层嵌套函数
+def log(func):
+
+    def wrapper(*args, **kw):
+
+        print('output {}:' .format(func.__name__))
+
+        return func(*args, **kw)
+    print('end....')
+
+    return wrapper
+
+
+@log
+def Stock_600213():
+    print('2018-12-25:6.54 {} {} '.format(1, 2))
+
+
+Stock_600213()
+
+
+# 需要传入参数的装饰器,3层嵌套函数
+import functools
+
+
+def log_01(text):
+
+    def decorator(func):
+
+        @functools.wraps(func)  # 实现wrapper.__name__ = func.__name__
+        def wrapper(*args, **kw):
+
+            print('{} {}:' .format(text, func.__name__))
+
+            return func(*args, **kw)
+
+        return wrapper
+
+    return decorator
+
+
+@log_01('Now Output')
+def Stock_600213_01(Close):
+
+    print('2018-12-25 {} :6.54'.format(Close))
+
+
+Stock_600213_01("===close===")
+print(Stock_600213_01.__name__)  # 注意@functools.wraps(func)的区别
+# 相当于一下执行方式：
+# log_01('你好')(Stock_600213_01)('===close===')
+
+print('===================')
+log_01('------')
+
+
+def decoreator(text):
+    print('ssssss')
+
+    def wrapper(func):
+        def ccc(*args, **kw):
+
+            print('text :{}  is :{}'.format(text, func.__name__))
+            print(f'canhsu : {args}')
+            return func(*args, **kw)
+        return ccc
+    return wrapper
+
+
+@decoreator('==---***')
+def log2(d):
+    print('log2')
+
+# log2('00')
