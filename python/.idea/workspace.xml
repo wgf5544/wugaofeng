@@ -7,7 +7,8 @@
       <change beforePath="$PROJECT_DIR$/twisted/twisted_defer.py" beforeDir="false" afterPath="$PROJECT_DIR$/twisted/twisted_defer.py" afterDir="false" />
 =======
     <list default="true" id="33022716-0733-45ce-a0ab-a0a516e2a3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 >>>>>>> origin/master
     </list>
@@ -90,28 +91,65 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.virtualenvs/py3.6/lib/python3.6/site-packages/twisted/internet/utils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
               <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python_learning.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="166" column="16" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+              <folding>
+                <element signature="e#2634#2662#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.virtualenvs/py3.6/lib/python3.6/site-packages/twisted/internet/defer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3330">
               <caret line="200" column="14" selection-start-line="200" selection-end-line="200" selection-end-column="14" />
 =======
+=======
+>>>>>>> Stashed changes
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/class.py">
+        <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1222013172/builtins.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="264">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
 >>>>>>> origin/master
+=======
+            <state relative-caret-position="176">
+              <caret line="155" column="4" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/timeit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="131" column="10" lean-forward="true" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1222013172/time.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="130" column="16" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="16" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -224,7 +262,11 @@
         <option value="$PROJECT_DIR$/test.py" />
 =======
         <option value="$PROJECT_DIR$/class.py" />
+<<<<<<< Updated upstream
 >>>>>>> origin/master
+=======
+        <option value="$PROJECT_DIR$/python_learning.py" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -240,9 +282,14 @@
     <option name="y" value="23" />
 =======
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< Updated upstream
     <option name="x" value="1591" />
     <option name="y" value="-47" />
 >>>>>>> origin/master
+=======
+    <option name="x" value="1239" />
+    <option name="y" value="-156" />
+>>>>>>> Stashed changes
     <option name="width" value="1440" />
     <option name="height" value="813" />
   </component>
@@ -286,11 +333,15 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   <component name="RunManager" selected="Python.test">
     <configuration name="multicast_cast_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
 =======
   <component name="RunManager" selected="Python.class">
+=======
+  <component name="RunManager" selected="Python.python_learning">
+>>>>>>> Stashed changes
     <configuration name="class" type="PythonConfigurationType" factoryName="Python" temporary="true">
 >>>>>>> origin/master
       <module name="python" />
@@ -304,7 +355,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/class.py" />
+      <option name="SCRIPT_NAME" value="D:\repo\wugaofeng\python\python_learning.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -343,7 +394,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="tcp_multicastudp_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration name="python_learning" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> Stashed changes
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -351,12 +406,16 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/twisted" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+<<<<<<< Updated upstream
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/twisted/tcp_multicastudp_server.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_learning.py" />
+>>>>>>> Stashed changes
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -410,10 +469,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.class" />
       <item itemvalue="Python.multicast_cast_client" />
+      <item itemvalue="Python.python_learning" />
       <item itemvalue="Python.tcp_multicastudp_server" />
-      <item itemvalue="Python.tcp_client" />
       <item itemvalue="Python.twisted_defer" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <item itemvalue="Python.test" />
     </list>
@@ -422,15 +483,17 @@
         <item itemvalue="Python.test" />
 =======
       <item itemvalue="Python.class" />
+=======
+>>>>>>> Stashed changes
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.python_learning" />
         <item itemvalue="Python.class" />
 >>>>>>> origin/master
         <item itemvalue="Python.tcp_multicastudp_server" />
         <item itemvalue="Python.twisted_defer" />
         <item itemvalue="Python.multicast_cast_client" />
-        <item itemvalue="Python.tcp_client" />
       </list>
     </recent_temporary>
   </component>
@@ -445,6 +508,7 @@
       <option name="presentableId" value="Default" />
       <updated>1554568922663</updated>
     </task>
+<<<<<<< Updated upstream
     <task id="LOCAL-00001" summary="xxxx">
       <created>1555604557602</created>
       <option name="number" value="00001" />
@@ -467,6 +531,23 @@
       <updated>1557327068994</updated>
     </task>
     <option name="localTasksCounter" value="4" />
+=======
+    <task id="LOCAL-00001" summary="commit class.py">
+      <created>1558081613624</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1558081613624</updated>
+    </task>
+    <task id="LOCAL-00002" summary="xxx">
+      <created>1558093160672</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558093160672</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TodoView">
@@ -479,6 +560,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <frame x="-1" y="23" width="1440" height="813" extended-state="0" />
     <layout>
@@ -495,6 +577,17 @@
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.34813753" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994452" />
+=======
+    <frame x="1322" y="-162" width="1440" height="813" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67253524" visible="true" weight="0.25626343" />
+      <window_info id="Structure" order="1" sideWeight="0.3274648" side_tool="true" visible="true" weight="0.25626343" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31445086" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39884394" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924107" />
@@ -502,11 +595,15 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.37679082" />
       <window_info anchor="bottom" id="Python Console" order="12" />
 =======
       <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.37723213" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.54340833" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32924107" />
 >>>>>>> origin/master
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -519,6 +616,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -555,6 +653,13 @@
   </component>
 =======
 >>>>>>> origin/master
+=======
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit class.py" />
+    <MESSAGE value="xxx" />
+    <option name="LAST_COMMIT_MESSAGE" value="xxx" />
+  </component>
+>>>>>>> Stashed changes
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-1220865699/builtins.py" />
     <entry file="file://$PROJECT_DIR$/coding-200-高级编程和IO并发线程/chapter10/socket_server.py">
@@ -699,6 +804,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/twisted/demo.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -720,6 +826,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+=======
+    <entry file="file://$PROJECT_DIR$/python_learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="166" column="16" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+          <folding>
+            <element signature="e#2634#2662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1222013172/time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="130" column="16" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/timeit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="131" column="10" lean-forward="true" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1222013172/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="155" column="4" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="4" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
