@@ -1,9 +1,10 @@
 # ==============class================
-
 class a(object):
     pass
 
+
 print("a type:", a.__class__)
+
 print("a bases:", a.__bases__)  # 旧式类的类型为老式：classobj，在python3.x中所有类的类型为新式类：type
 
 print("list type:", list.__class__)  # <class 'type'> 被type类实例化的
@@ -11,17 +12,15 @@ print("list type:", list.__class__)  # <class 'type'> 被type类实例化的
 print("list bases:", list.__bases__)  # 父类是什么,父类可能是多个，所以返回类型是tuple
 
 print("type bases:", type.__bases__)
+
 mylist = [1, 3, 4]
+
 print(mylist.__class__)
+
 # print(mylist.__bases__)
 # metaclass->class->instance
 # 所有类的父类（包括type）都是object
 # type实例化了自己，同时实例化了object
-
-
-
-
-
 
 # ====================变量和动态特性=====================
 
@@ -123,7 +122,7 @@ I/O密集型任务：多线程，由于Python GIL锁限制，多线程更适合I
 """
 
 from threading import Thread
-from multiprocessing import Process,Manager
+from multiprocessing import Process, Manager
 from timeit import timeit
 
 
@@ -166,7 +165,6 @@ def test_Process():
     t3.join()
 
 
-
 if __name__ == '__main__':
     # print("test_normal", timeit('test_normal()', 'from __main__ import test_normal', number=10))
     # print("test_Thread", timeit('test_Thread()', 'from __main__ import test_Thread', number=10))
@@ -179,8 +177,6 @@ if __name__ == '__main__':
         print(c)
 
     argument(5, 6, c=7)
-
-
 
 # ===============装饰器================
 """
@@ -216,7 +212,6 @@ def Stock_600213():
 
 
 Stock_600213()
-
 
 # 需要传入参数的装饰器,3层嵌套函数
 import functools
@@ -258,7 +253,6 @@ def decoreator(text):
 
     def wrapper(func):
         def ccc(*args, **kw):
-
             print('text :{}  is :{}'.format(text, func.__name__))
             print(f'canhsu : {args}')
             return func(*args, **kw)
@@ -266,8 +260,10 @@ def decoreator(text):
     return wrapper
 
 
+
 @decoreator('==---***')
 def log2(d):
     print('log2')
+
 
 # log2('00')

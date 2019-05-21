@@ -68,7 +68,6 @@ df = pd.DataFrame([[1., 2., 3., 5],[1., 2., 3., 4.]],
 print(df)
 
 
-
 # 创建一个二维ndarray阵列,并指定散列的类型分别为整数、浮点、字符串
 data = np.zeros((2,), dtype=[('A', 'i4'), ('B', 'f4'), ('C', 'a10')])
 print('-------------')
@@ -200,9 +199,10 @@ df_adddat = pd.DataFrame([{u'Open': 1.1, u'High': 1.2, u'Low': 1.3, u'Close': 1.
                                 datetime.datetime.strptime("2016-06-26 00:00:00", "%Y-%m-%d %H:%M:%S")])
 df_csvload = df_csvload.append(df_adddat)
 
-
 # 存储csv文件数据
 df_csvload.to_csv('/Users/wgf/git_repository/wugaofeng/python/csv/table_stock',
                   columns=df_csvload.columns, index=True)
+
+
 
 
