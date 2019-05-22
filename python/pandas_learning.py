@@ -184,7 +184,7 @@ parse_dates=True，指把行索引字符串解析成时间格式;
 encoding参数指定unicode文本编码的格式；
 
 '''
-df_csvload = pd.read_csv('/Users/wgf/git_repository/wugaofeng/python/csv/table_stock',
+df_csvload = pd.read_csv('./csv/table_stock',
                           parse_dates=True, index_col=0, encoding='gb2312')
 print(df_csvload.index)
 
@@ -206,3 +206,4 @@ df_csvload.to_csv('/Users/wgf/git_repository/wugaofeng/python/csv/table_stock',
 
 
 
+print(range(10))
