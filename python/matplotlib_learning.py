@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt  # 导入Matplotlib库中的pyplot模块，该�
 import numpy as np
 import matplotlib
 
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS']  # 用来正常显示中文标签
 plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
 
 y_value = np.random.randn(200)
@@ -57,6 +57,6 @@ plt.grid(True)#注释(6)
 plt.legend(loc='best')#注释(7)
 
 #注释(8)：plot()函数用于绘制线条，linestyle参数设定线条类型，color参数指定线条的颜色，market参数设置数据点的形状，linewidth参数设定线条的宽度
-plt.plot(x_value,y_value,label=u"随机误差",ls='-',c='r',lw=1) #注释(8)
+plt.plot(x_value, y_value, label=u"随机误差", ls='-', c='r', lw=1) #注释(8)
 
 plt.show()
