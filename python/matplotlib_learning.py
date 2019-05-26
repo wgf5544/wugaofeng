@@ -17,7 +17,8 @@ import matplotlib.pyplot as plt  # 导入Matplotlib库中的pyplot模块，该�
 import numpy as np
 import matplotlib
 
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS']  # 用来正常显示中文标签 mac下可正常显示中文
+# plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
 
 y_value = np.random.randn(200)
