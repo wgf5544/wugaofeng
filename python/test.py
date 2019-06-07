@@ -28,16 +28,15 @@ class aaa(object):
         return 'aaaaaaaa'
 
 
-if __name__ == "__main__":
-    #
-    # url = "http://192.168.11.224:12000/febg/v1/sensor_group"
-    # try:
-    #     r = requests.put(url, data=json.dumps(febg_msg), timeout=3)
-    #     print(r.text)
-    # except Exception as e:
-    #     print(e)
-    #
-    # print(range(10))
+
+# url = "http://192.168.11.224:12000/febg/v1/sensor_group"
+# try:
+#     r = requests.put(url, data=json.dumps(febg_msg), timeout=3)
+#     print(r.text)
+# except Exception as e:
+#     print(e)
+#
+# print(range(10))
 
 def time1():
     return 888999777 % 2
