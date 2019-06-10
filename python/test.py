@@ -15,6 +15,29 @@ febg_msg = {
     "sensorId": "Lux0001"
 
 }
+
+
+class aaa(object):
+    def __init__(self, name: str = 'zhangsan'):
+        print(name)
+
+    def __bool__(self):
+        return False
+
+    def __repr__(self):
+        return 'aaaaaaaa'
+
+
+
+# url = "http://192.168.11.224:12000/febg/v1/sensor_group"
+# try:
+#     r = requests.put(url, data=json.dumps(febg_msg), timeout=3)
+#     print(r.text)
+# except Exception as e:
+#     print(e)
+#
+# print(range(10))
+
 def time1():
     return 888999777 % 2
 def time2():
@@ -66,10 +89,13 @@ if __name__ == "__main__":
     x = 1000
     y = 2000
 
+    # print(x**2 for x in range(5))
     x = x ^ y
     y = x ^ y
     x = x ^ y
 
+    a = aaa()
+    print(bool(a))
     # print(f'x:{x}, y:{y}')
     #
     # m =2
@@ -95,6 +121,10 @@ if __name__ == "__main__":
     # print('ssbbcc'.count('bc'))
     # print( float("inf"))
 
+    print(333//31)
+
+    print(sum(map(int, str(2 ** 1000))))
+    print(2**1000)
     import bisect
     import time
 
