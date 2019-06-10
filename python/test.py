@@ -118,29 +118,43 @@ if __name__ == "__main__":
         print(bisect.bisect(BREAKPOINTS, seconds_delta))
         return tmpl.format(units=seconds_delta // unit)
 
-    now = time.time()
-    print(from_now(now - 24))
-    print()
+    # now = time.time()
+    # print(from_now(now - 24))
+    # print()
+    #
+    # a = {'s':'sdfghjkliuyt','ss':'ssssss'}
+    # a['s'][100:200]
+    # ret = a.pop('s1',1111)
+    # print(ret)
+    # print(a)
+    # numbers = [3, 7, 8 , 2, 21]
+    # print(next((i for i in numbers if i % 2 == 0)))
+    #
+    # # 在 Python 3.6 中，默认的字典类型修改了实现方式，已经变成有序的了
+    # l = [10, 2, 3, 21, 10, 3]
+    # from collections import OrderedDict
+    # ss = list(OrderedDict.fromkeys(l).keys())
+    # dict_cc = OrderedDict.fromkeys(l)
+    # dict_cc[10] = 111
+    # print(dict_cc)
+    # a = dict()
+    #
+    # import sys
+    # print('...:', sys.getrecursionlimit())
+    #
+    # s = input()
+    # print(s)
+    # print('\n'.join([''.join([('Love'[(x - y) % len('Love')] if ((x * 0.05) ** 2 + (y * 0.1) ** 2 - 1) ** 3 - (
+    #             x * 0.05) ** 2 * (y * 0.1) ** 3 <= 0 else ' ') for x in range(-30, 30)]) for y in range(30, -30, -1)]))
+    #
+    # # 一行代码实现数组的flatten功能: 将多维数组转化为一维
+    # flatten = lambda x: [y for l in x for y in flatten(l)] if isinstance(x, list) else [x]
+    #
+    # # 一行代码实现list, 有点类似与上个功能的反功能
+    # array = lambda x: [x[i:i + 3] for i in range(0, len(x), 3)]
+    #
+    # # 一行代码实现求解2的1000次方的各位数之和
+    # print(sum(map(int, str(2 ** 1000))))
 
-    a = {'s':'sdfghjkliuyt','ss':'ssssss'}
-    a['s'][100:200]
-    ret = a.pop('s1',1111)
-    print(ret)
-    print(a)
-    numbers = [3, 7, 8 , 2, 21]
-    print(next((i for i in numbers if i % 2 == 0)))
-
-    # 在 Python 3.6 中，默认的字典类型修改了实现方式，已经变成有序的了
-    l = [10, 2, 3, 21, 10, 3]
-    from collections import OrderedDict
-    ss = list(OrderedDict.fromkeys(l).keys())
-    dict_cc = OrderedDict.fromkeys(l)
-    dict_cc[10] = 111
-    print(dict_cc)
-    a = dict()
-
-    import sys
-    print('...:', sys.getrecursionlimit())
-
-    s = input()
-    print(s)
+    print(type(from_now))
+    print(callable(from_now))

@@ -192,15 +192,16 @@ if __name__ == '__main__':
 如果return 的是函数调用不只是函数名，会一层层执行装饰器中函数。
 """
 
-
+print("====================================以下是装饰器功能====================================")
 # 普通装饰器，2层嵌套函数
 def log(func):
-
+    print('start....')
     def wrapper(*args, **kw):
 
         print('output {}:' .format(func.__name__))
 
         return func(*args, **kw)
+
     print('end....')
 
     return wrapper
@@ -210,21 +211,25 @@ def log(func):
 def Stock_600213():
     print('2018-12-25:6.54 {} {} '.format(1, 2))
 
-
 Stock_600213()
+
+print("===============================================")
+
+# Stock_600213()
 
 # 需要传入参数的装饰器,3层嵌套函数
 import functools
 
 
 def log_01(text):
-
+    print(f"....{text}")
     def decorator(func):
-
+        print(f'....decorator')
         @functools.wraps(func)  # 实现wrapper.__name__ = func.__name__
         def wrapper(*args, **kw):
+            print('....wrapper')
 
-            print('{} {}:' .format(text, func.__name__))
+            print('{} {}' .format(text, wrapper.__name__))
 
             return func(*args, **kw)
 
@@ -239,8 +244,10 @@ def Stock_600213_01(Close):
     print('2018-12-25 {} :6.54'.format(Close))
 
 
-Stock_600213_01("===close===")
-print(Stock_600213_01.__name__)  # 注意@functools.wraps(func)的区别
+# Stock_600213_01("===close===")
+# print(Stock_600213_01.__name__)  # 注意@functools.wraps(func)的区别
+
+print('=================================================================')
 # 相当于一下执行方式：
 # log_01('你好')(Stock_600213_01)('===close===')
 
@@ -267,3 +274,91 @@ def log2(d):
 
 
 # log2('00')
+
+
+# 可被调用的对象
+print('====================================可被调用对象================================')
+import time
+import functools
+
+
+class DelayFunc:
+    def __init__(self,  duration, func):
+        self.duration = duration
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        print(f'Wait for {self.duration} seconds...')
+        time.sleep(self.duration)
+        return self.func(*args, **kwargs)
+
+    def eager_call(self, *args, **kwargs):
+        print('Call without delay')
+        return self.func(*args, **kwargs)
+
+
+def delay(duration):
+    """装饰器：推迟某个函数的执行。同时提供 .eager_call 方法立即执行
+    """
+    # 此处为了避免定义额外函数，直接使用 functools.partial 帮助构造
+    # DelayFunc 实例
+    return functools.partial(DelayFunc, duration)
+
+
+def func_print(text):
+    print(text)
+
+
+# delay_init = functools.partial(DelayFunc, 2)
+#
+# delay_instance = delay_init(func_print)
+#
+# delay_instance('.....func_print')
+#
+
+print(callable(DelayFunc))
+
+
+@delay(duration=0)
+def add(a, b):
+    return a + b
+
+
+# 这次调用将会延迟 2 秒
+add(1, 2)
+# 这次调用将会立即执行
+add.eager_call(1, 2)
+
+
+
+import random
+
+
+def provide_number(min_num, max_num):
+    """装饰器：随机生成一个在 [min_num, max_num] 范围的整数，追加为函数的第一个位置参数
+    """
+
+    def wrapper(func):
+        def decorated(*args, **kwargs):
+            num = random.randint(min_num, max_num)
+            # 将 num 作为第一个参数追加后调用函数
+            return func(*args, **kwargs)
+
+        return decorated
+
+    return wrapper
+
+
+
+class Foo:
+    @provide_number(1, 100)
+    def print_random_number(self, num):
+        print(num)
+
+# OUTPUT: <__main__.Foo object at 0x104047278>
+Foo().print_random_number(2)
+
+
+a = {"a": 10, "b": 20, "c": 30}
+for m in (m for m in a):
+    print(m)
