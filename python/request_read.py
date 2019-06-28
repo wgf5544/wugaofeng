@@ -1,3 +1,4 @@
+
 '''
 
 Args:
@@ -49,3 +50,14 @@ class RequestsTestSuite(unittest.TestCase):
 #     print("开始测试。。。。。。")
 #     req = RequestsTestSuite()
 #     req.test_invalid_url()
+
+__author__ = 'wgf'
+__date__ = ' 下午10:08'
+import requests
+
+import requests
+s = requests.Session()
+r = s.get('https://httpbin.org/get')
+print(r)
+dict()
+

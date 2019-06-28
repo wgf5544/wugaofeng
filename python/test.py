@@ -186,5 +186,18 @@ if __name__ == "__main__":
     # # 一行代码实现求解2的1000次方的各位数之和
     # print(sum(map(int, str(2 ** 1000))))
 
-    print(type(from_now))
-    print(callable(from_now))
+    # 在 Python 3.6 中，默认的字典类型修改了实现方式，已经变成有序的了
+    l = [10, 2, 3, 21, 10, 3]
+    from collections import OrderedDict
+    ss = list(OrderedDict.fromkeys(l).keys())
+    dict_cc = OrderedDict.fromkeys(l)
+    dict_cc[10] = 111
+    print(dict_cc)
+    a = dict()
+
+    import sys
+    print('...:', sys.getrecursionlimit())
+
+    s = input()
+    print(s)
+
