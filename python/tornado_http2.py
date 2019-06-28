@@ -12,7 +12,7 @@ from tornado import gen
 from tornado.concurrent import run_on_executor
 from concurrent.futures import ThreadPoolExecutor
 from tornado.platform.asyncio import AsyncIOMainLoop
-# from aiokafka_test import AIOKafkaProducer
+# from aiokafka import AIOKafkaProducer
 import asyncio
 requst_set = set()
 start_times = 0
@@ -32,11 +32,11 @@ class BaseHandler(RequestHandler):
         if response:
             self.write(response)
         else:
-            self.write("完成".encode())
+            self.write(b"222")
             self.set_status(201)
 
-        # self.flush()  # 将缓冲区刷新到网络
-        # self.finish()  # 关闭长连接
+        self.flush()  # 将缓冲区刷新到网络
+        self.finish()  # 关闭长连接
 
     def on_connection_close(self) -> None:
         '''
@@ -49,14 +49,14 @@ class BaseHandler(RequestHandler):
         '''
         在执行request method（post/get..）之前调用
         '''
-        print(f"received request，and request info :{repr(self.request)}")
+        # print(f"received request，and request info :{repr(self.request)}")
         return super().prepare()
 
     def on_finish(self):
         '''
         服务端发送完数据时调用，此处可做一些清理工作
         '''
-        print(f"the response has been sent to the client, request info :{str(self.request)}")
+        # print(f"the response has been sent to the client, request info :{str(self.request)}")
 
 
 
@@ -90,20 +90,19 @@ class LoginHandler(BaseHandler):
     def options(self):
         print("ssss")
 
-    # @gen.coroutine
-
-    async def post(self):
+    @gen.coroutine
+    def post(self):
         print("ssssssssssssssss")
         body = self.request.body
 
-        result = await self.handle(body)
+        result = yield self.handle(body)
         # print(f"host :{self.request.connection.stream.socket.getpeername()}")
         self._response(result)
 
         # print(time.time()-start_times)
 
-    # @run_on_executor
-    async def handle(self,body):
+    @run_on_executor
+    def handle(self,body):
 
         try:
             # todo:to do something

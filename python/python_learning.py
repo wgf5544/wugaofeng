@@ -333,32 +333,90 @@ add.eager_call(1, 2)
 
 import random
 
+#
+# def provide_number(min_num, max_num):
+#     """装饰器：随机生成一个在 [min_num, max_num] 范围的整数，追加为函数的第一个位置参数
+#     """
+#
+#     def wrapper(func):
+#         def decorated(*args, **kwargs):
+#             num = random.randint(min_num, max_num)
+#             # 将 num 作为第一个参数追加后调用函数
+#             return func(*args, **kwargs)
+#
+#         return decorated
+#
+#     return wrapper
+
+
+
+# class Foo:
+#     @provide_number(1, 100)
+#     def print_random_number(self, num):
+#         print(num)
+
+# OUTPUT: <__main__.Foo object at 0x104047278>
+# Foo().print_random_number(2)
+
+
+
+
+
+import wrapt
+
 
 def provide_number(min_num, max_num):
-    """装饰器：随机生成一个在 [min_num, max_num] 范围的整数，追加为函数的第一个位置参数
-    """
-
-    def wrapper(func):
-        def decorated(*args, **kwargs):
-            num = random.randint(min_num, max_num)
-            # 将 num 作为第一个参数追加后调用函数
-            return func(*args, **kwargs)
-
-        return decorated
+    @wrapt.decorator
+    def wrapper(wrapped, instance, args, kwargs):
+        # 参数含义：
+        #
+        # - wrapped：被装饰的函数或类方法
+        # - instance：
+        #   - 如果被装饰者为普通类方法，该值为类实例
+        #   - 如果被装饰者为 classmethod 类方法，该值为类
+        #   - 如果被装饰者为类/函数/静态方法，该值为 None
+        #
+        # - args：调用时的位置参数（注意没有 * 符号）
+        # - kwargs：调用时的关键字参数（注意没有 ** 符号）
+        #
+        print(f"instance={instance}")
+        print(isinstance(instance, object))
+        num = random.randint(min_num, max_num)
+        # 无需关注 wrapped 是类方法或普通函数，直接在头部追加参数
+        args = (num,) + args
+        return wrapped(*args, **kwargs)
 
     return wrapper
 
 
+class abc():
 
-class Foo:
-    @provide_number(1, 100)
-    def print_random_number(self, num):
-        print(num)
-
-# OUTPUT: <__main__.Foo object at 0x104047278>
-Foo().print_random_number(2)
+    @provide_number(1, 5)
+    def ad(self, num):
+        print(f"num= {num}")
 
 
-a = {"a": 10, "b": 20, "c": 30}
-for m in (m for m in a):
-    print(m)
+abc().ad()
+
+
+def create_multipliners():
+    s = [lambda x: n * x for n in range(5)]
+    print(locals())
+    return s
+
+create_multipliners()
+
+# for mf in create_multipliners():
+#     print(mf(2))
+#     print(locals())
+#
+#
+from functools import partial;
+from operator import mul;
+
+def testFun2():
+    return [partial((lambda i, x:i * x), i) for i in range(4)];
+
+for everyLambda in testFun2():
+    print(everyLambda(2));
+print();
