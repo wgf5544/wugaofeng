@@ -10,10 +10,14 @@ from sys import stdout
 class Echo(Protocol):
 
     def connectionMade(self):
-        self.transport.write('hello TCP server,I am TCP client!!!!!'.encode())
+        self.transport.write('hello TCP server,I am TCP client!!!!! '
+                             'hello TCP server,I am TCP client!!!!! '
+                             'hello TCP server,I am TCP client!!!!!'
+                             'hello TCP server,I am TCP client!!!!!'
+                             'hello TCP server,I am TCP client!!!!!'.encode())
 
     def dataReceived(self, data):
-        time.sleep(1)
+
         #stdout.write(data)
         print('From TCP server data:{}'.format(data))
         self.transport.write(data)
@@ -35,5 +39,5 @@ class EchoClientFactory(ClientFactory):
         print('Connection failed. Reason:', reason)
 
 
-reactor.connectTCP('localhost', 9999, EchoClientFactory())
+reactor.connectTCP('localhost', 8888, EchoClientFactory())
 reactor.run()
