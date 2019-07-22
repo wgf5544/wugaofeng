@@ -33,3 +33,9 @@ print(id(lst1[2]),id(lst[2]))  #肯定不一样d's
 
 # 3.深拷贝,创建一个一摸一样完全新的对象 不可变对象,还是原来的,可变对象创建新的
 
+import datetime
+
+print((datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S"))
+
+print(str(None).lower())
+print(len("sss s ".strip()))
