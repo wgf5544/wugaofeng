@@ -25,7 +25,6 @@ class MulticastPingClient(DatagramProtocol):
         print("From UDP server data: %s received from %s" % (repr(datagram), repr(address)))
 
 
-
 # task1.start(2)
 
 # 组播组客户端也需要设置监听端口

@@ -129,6 +129,7 @@ class Handler(object):
         self.app = app
         self.app.add_routes([
             web.post('/aiotunnel', self.post_aiotunnel),
+            web.post('/', self.post_aiotunnel),
             web.put('/aiotunnel/{cid}', self.put_aiotunnel),
             web.get('/aiotunnel/{cid}', self.get_aiotunnel),
             web.delete('/aiotunnel/{cid}', self.delete_aiotunnel)

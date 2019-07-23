@@ -1,0 +1,12 @@
+From dr.z/base-centos6
+MAINTAINER Jiaxiang Su "jsu@zshield.net"
+
+USER root
+
+ADD . /install
+
+RUN cd /install/; ./mysql-install.sh; cd ..;rm -rf /install
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+EXPOSE 3306

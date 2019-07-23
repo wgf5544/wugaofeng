@@ -39,3 +39,8 @@ rand = random.random()*100
 for i in range(100):
     print(int(random.random()*100%100))
 
+import  datetime
+print((datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S"))
+
+print(str(None).lower())
+print(len("sss s ".strip()))
