@@ -44,3 +44,11 @@ print((datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %
 
 print(str(None).lower())
 print(len("sss s ".strip()))
+
+print(bool(''))
+
+l = [2,"3",5]
+l2 = [3,5,"3"]
+l3 = []
+s = set(l).intersection(set(l2))
+print(bool(s))

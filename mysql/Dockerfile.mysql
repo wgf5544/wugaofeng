@@ -1,5 +1,5 @@
-From dr.z/base-centos6
-MAINTAINER Jiaxiang Su "jsu@zshield.net"
+From wgf5544/centos:base-centos6
+MAINTAINER gaofeng Wu "gfwu@zshield.net"
 
 USER root
 

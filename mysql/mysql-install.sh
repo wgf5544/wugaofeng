@@ -3,11 +3,18 @@
 cp /install/entrypoint.sh /.
 cp /install/sanity_check.sh /.
 
-yum install -y epel-release
-yum install --enablerepo=epel -y mysql-server
-
+rm -rf /install
+#yum install -y epel-release
+#yum install --enablerepo=epel -y mysql-server
+yum -y install wget
+wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+#yum -y remove wget
+yum -y install mysql-community-server
 #install supervisord
 yum -y install python-setuptools && easy_install supervisor
+yum clean all
+yum makecache
 
 cat > /etc/supervisord.conf <<EOF
 [supervisord]
